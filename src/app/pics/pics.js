@@ -6,6 +6,41 @@ angular.module( 'picThis.pics', [
   'picService'
 ])
 
+.config(function myAppConfig ( $stateProvider, $routeProvider ) {
+  
+  $stateProvider.state( 'pics', {
+    url: '/pics',
+    views: {
+      "main": {
+        controller: 'picParamListCtrl',
+        templateUrl: 'pics/pics.tpl.html'
+      }
+	}
+});
+	
+   $stateProvider.state( 'pics/:id', {
+    url: '/pics/:id',
+    views: {
+      "main": {
+        controller: 'picsDetailCtrl',
+        templateUrl: 'pics/pics-detail.tpl.html'
+      }
+	} 
+	});
+	
+  $routeProvider.
+	when('/pics',{
+		templateUrl: 'pics/pics.tpl.html',   
+		controller: 'picParamListCtrl'}).
+    when('/pics/:id', {
+		templateUrl: 'pics/pics-detail.tpl.html', 
+		controller: 'picsDetailCtrl'}).
+    otherwise( '/pics' );
+	  }
+)
+
+
+/*
 .config(function config( $stateProvider ) {
   $stateProvider.state( 'pics', {
     url: '/pics',
@@ -18,10 +53,18 @@ angular.module( 'picThis.pics', [
   });
 })
 
+*/
+
 .controller ('picParamListCtrl', function picParamListCtrl($scope, picsFactory) {
   $scope.picParams = picsFactory.query();
 })
-;
+
+
+.controller ('picsDetailCtrl', function picsDetailCtrl($scope, picsFactory) {
+  $scope.picParams = picsFactory.query();
+});
+
+
 /*
 .controller( 'picCtrl', function picCtrl( $scope, titleService, picsFactory ) {
   

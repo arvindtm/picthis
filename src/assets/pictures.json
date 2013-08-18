@@ -1,13 +1,13 @@
 [
  { "id": "1",
-  "name": "lancelot1",
+  "name": "Nimi",
   "quest": "holy grail",
   "color": "blue",
   "url":"http://media.treehugger.com/assets/images/2013/07/elon-musk-hyperloop.jpg.662x0_q100_crop-scale.jpg"
   },
  
 { "id": "2",
-  "name": "lancelot2",
+  "name": "ATM",
   "quest": "holy grail",
   "color": "blue",
   "url":"http://media.treehugger.com/assets/images/2013/07/elon-musk-hyperloop.jpg.662x0_q100_crop-scale.jpg"

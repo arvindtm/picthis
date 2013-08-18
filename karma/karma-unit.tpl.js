@@ -53,7 +53,7 @@ module.exports = function ( karma ) {
      * the aesthetic advantage of not launching a browser every time you save.
      */
     browsers: [
-      'Chrome'
+      "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
     ]
   });
 };

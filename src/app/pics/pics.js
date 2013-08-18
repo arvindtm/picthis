@@ -36,24 +36,9 @@ angular.module( 'picThis.pics', [
 		templateUrl: 'pics/pics-detail.tpl.html', 
 		controller: 'picsDetailCtrl'}).
     otherwise( '/pics' );
-	  }
+	}
 )
 
-
-/*
-.config(function config( $stateProvider ) {
-  $stateProvider.state( 'pics', {
-    url: '/pics',
-    views: {
-      "main": {
-        controller: 'picParamListCtrl',
-        templateUrl: 'pics/pics.tpl.html'
-      }
-    }
-  });
-})
-
-*/
 
 .controller ('picParamListCtrl', function picParamListCtrl($scope, picsFactory) {
   $scope.picParams = picsFactory.query();
@@ -62,30 +47,28 @@ angular.module( 'picThis.pics', [
 
 .controller ('picsDetailCtrl', function picsDetailCtrl($scope, picsFactory) {
   $scope.picParams = picsFactory.query();
-});
-
-
-/*
-.controller( 'picCtrl', function picCtrl( $scope, titleService, picsFactory ) {
-  
-  titleService.setTitle( 'Pictures' );
-  
-  $scope.picParams = picsFactory.query();
-  
-  //$scope.picList = picsFactory.query();
-  //$scope.picName = picList.name; 
-  //$scope.picColor = picList.color;
-   
-     
-  // This is simple a demo for UI Boostrap.
-  $scope.dropdownDemoItems = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
-  
-  
 })
 
-;
+/*
+
+.controller ('CarouselDemoCtrl' function CarouselDemoCtrl($scope, picsFactory) {
+  $scope.myInterval = 5000;
+  var slides = $scope.slides = [];
+  $scope.addSlide = function() {
+    var newWidth = 200 + ((slides.length + (25 * slides.length)) % 150);
+    slides.push({
+      image: 'http://placekitten.com/' + newWidth + '/200',
+      text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
+        ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+    });
+  };
+  for (var i=0; i<4; i++) {
+    $scope.addSlide();
+  }
+}
+
 */
+
+;
+
+

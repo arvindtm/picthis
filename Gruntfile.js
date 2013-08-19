@@ -18,6 +18,9 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ngmin');
   grunt.loadNpmTasks('grunt-html2js');
+  
+  
+  
 
   /**
    * Load in our build configuration file.
@@ -118,6 +121,17 @@ module.exports = function ( grunt ) {
           }
         ]
       },
+      build_vendorcss: {
+        files: [
+          {
+            src: [ '<%= vendor_files.css %>' ],
+            dest: '<%= build_dir %>/',
+            cwd: '.',
+            expand: true
+          }
+        ]
+      },
+
       build_vendorjs: {
         files: [
           {
@@ -175,7 +189,8 @@ module.exports = function ( grunt ) {
     coffee: {
       source: {
         options: {
-          bare: true
+          bare: true,
+		  sourceMap:true
         },
         expand: true,
         cwd: '.',
@@ -224,8 +239,8 @@ module.exports = function ( grunt ) {
     recess: {
       build: {
         src: [ '<%= app_files.less %>' ],
-        dest: '<%= build_dir %>/assets/<%= pkg.name %>.css',
-        options: {
+        dest: '<%= build_dir %>/css/<%= pkg.name %>.css',
+		options: {
           compile: true,
           compress: false,
           noUnderscores: false,
@@ -234,8 +249,8 @@ module.exports = function ( grunt ) {
         }
       },
       compile: {
-        src: [ '<%= recess.build.dest %>' ],
-        dest: '<%= recess.build.dest %>',
+        src: [ '<%= vendor_files.css %>', '<%= recess.build.dest %>' ],
+        dest: '<%= compile_dir %>/css/<%= pkg.name %>.css',
         options: {
           compile: true,
           compress: true,
@@ -359,7 +374,6 @@ module.exports = function ( grunt ) {
           '<%= build_dir %>/src/**/*.js',
           '<%= html2js.common.dest %>',
           '<%= html2js.app.dest %>',
-          '<%= vendor_files.css %>',
           '<%= recess.build.dest %>'
         ]
       },
@@ -395,6 +409,7 @@ module.exports = function ( grunt ) {
       }
     },
 
+	
     /**
      * And for rapid development, we have a watch set up that checks to see if
      * any of the files listed below change, and then to execute the listed 
@@ -518,7 +533,11 @@ module.exports = function ( grunt ) {
     }
   };
 
+
+
+  
   grunt.initConfig( grunt.util._.extend( taskConfig, userConfig ) );
+
 
   /**
    * In order to make it safe to just compile or copy *only* what was changed,
@@ -530,6 +549,7 @@ module.exports = function ( grunt ) {
   grunt.renameTask( 'watch', 'delta' );
   grunt.registerTask( 'watch', [ 'build', 'karma:unit', 'delta' ] );
 
+     
   /**
    * The default task is to build and compile.
    */
@@ -541,7 +561,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask( 'build', [
     'clean', 'html2js', 'jshint', 'coffeelint', 'coffee','recess:build',
     'copy:build_assets', 'copy:build_appjs', 'copy:build_vendorjs',
-    'index:build', 'karmaconfig', 'karma:continuous' 
+    'copy:build_vendorcss', 'index:build', 'karmaconfig', 'karma:continuous' 
   ]);
 
   /**

@@ -4,6 +4,7 @@ angular.module( 'picThis', [
   'picThis.home',
   'picThis.about',
   'picThis.pics',
+  'picThis.misc',
   'ui.state',
   'ui.route'
 ])
@@ -21,6 +22,5 @@ angular.module( 'picThis', [
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
 })
-
 ;
 

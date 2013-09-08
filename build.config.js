@@ -20,16 +20,16 @@ module.exports = {
    * app's unit tests.
    */
   app_files: {
-    js: [ 'src/**/*.js', '!src/**/*.spec.js','!src/femto/**' ],
+    js: [ 'src/**/*.js','!src/**/*.spec.js','!src/femto/**' ],
     jsunit: [ 'src/**/*.spec.js' ],
     
-    coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
+    coffee: [ 'src/**/*.coffee','!src/**/*.spec.coffee' ],
     coffeeunit: [ 'src/**/*.spec.coffee' ],
 
     atpl: [ 'src/app/**/*.tpl.html' ],
     ctpl: [ 'src/common/**/*.tpl.html' ],
 
-    html: [ 'src/index.html' ],
+	html: [ 'src/index.html' ],
     less: 'src/less/main.less'
   },
 

@@ -1,68 +1,22 @@
 <div class="row-fluid">
   <h1 class="page-header">
-    Easy Pic for Lazy readers
+    Easy Pic for Lazy readers and folks
     <small>For the lazy and impatient.</small>
   </h1>
     
-<div ng-controller="CarouselDemoCtrl">
-  <carousel interval="myInterval">
-    <slide ng-repeat="slide in slides" active="slide.active">
-      <img ng-src="{{slide.image}}" style="margin:auto;">
-      <div class="carousel-caption">
-        <h4>Slide {{$index}}</h4>
-        <p>{{slide.text}}</p>
-      </div>
-    </slide>
-  </carousel>
-  <div class="row-fluid">
-    <div class="span6">
-      <ul>
-        <li ng-repeat="slide in slides">
-          <button class="btn btn-mini" ng-class="{'btn-info': !slide.active, 'btn-success': slide.active}" ng-disabled="slide.active" ng-click="slide.active = true">select</button>
-          {{$index}}: {{slide.text}}
-        </li>
-      </ul>
-      <a class="btn" ng-click="addSlide()">Add Slide</a>
-    </div>
-    <div class="span6">
-      Interval, in milliseconds: <input type="number" ng-model="myInterval">
-      <br />Enter a negative number to stop the interval.
-    </div>
-  </div>
-</div>
 
 
   <div class=span12>
-    
-    <img ph-img="777x250" class="img-polaroid" />
-  </div>
-
-   <div class=span12>
     <img ph-img="250x150" class="img-polaroid" />
 	<img ph-img="250x150" class="img-polaroid" />
 	<img ph-img="250x150" class="img-polaroid" />
    </div>
    
-   <div class=span12>
-    <img ph-img="250x150" class="img-polaroid" />
-	<img ph-img="250x150" class="img-polaroid" />
-	<img ph-img="250x150" class="img-polaroid" />
-	<img ph-img="250x150" class="img-polaroid" />
-   </div>
    
-  <div class="span4">
-      <ul class="inline" ng-repeat="picPointer in picParams">
-        <li>
-          <p>{{picPointer.name}}</p>
-		  <a href="#/pics/{{picPointer.id}}" class="thumb"><img ng-src="{{picPointer.url}}"></a>
-		</li>
-      </ul>
-  </div>
-  
-
-
-    
-
+   
+  <p>{{picParamsname}}</p>
+  <p>{{picParamscolor}}</p>
+		  
   
 </div>
 

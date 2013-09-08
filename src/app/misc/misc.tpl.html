@@ -1,0 +1,43 @@
+<div class="row-fluid">
+  <h1 class="page-header">
+    Easy Pic for Lazy readers and folks
+    <small>For the lazy and impatient.</small>
+  </h1>
+    
+
+
+  <div class=span12>
+    
+    <img ph-img="777x250" class="img-polaroid" />
+  </div>
+
+  
+   <div class=span12>
+    <img ph-img="250x150" class="img-polaroid" />
+	<img ph-img="250x150" class="img-polaroid" />
+	<img ph-img="250x150" class="img-polaroid" />
+	<img ph-img="250x150" class="img-polaroid" />
+   </div>
+   
+  <div class="span4">
+      <ul class="inline" ng-repeat="picPointer in picParams">
+        <li>
+          <p>{{picPointer.name}}</p>
+		  <a href="#/pics/{{picPointer.id}}" class="thumb"><img ng-src="{{picPointer.url}}"></a>
+		</li>
+      </ul>
+  </div>
+  
+  
+  
+  <div class="span4">
+      <ul class="inline" ng-repeat="dataPointer in data">
+        <li>
+          <p>{{dataPointer.name}}</p>
+		  <a href="#/pics/{{dataPointer.id}}" class="thumb"><img ng-src="{{dataPointer.url}}"></a>
+		</li>
+      </ul>
+  </div>
+  
+</div>
+

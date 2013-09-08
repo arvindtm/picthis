@@ -190,7 +190,7 @@ module.exports = function ( grunt ) {
       source: {
         options: {
           bare: true,
-		  sourceMap:true
+          sourceMap:true
         },
         expand: true,
         cwd: '.',

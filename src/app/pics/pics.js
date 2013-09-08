@@ -3,7 +3,8 @@ angular.module( 'picThis.pics', [
   'placeholders',
   'ui.bootstrap',
   'titleService',
-  'picService'
+  'picService',
+  'jsonService'
 ])
 
 .config(function myAppConfig ( $stateProvider, $routeProvider ) {
@@ -40,35 +41,19 @@ angular.module( 'picThis.pics', [
 )
 
 
-.controller ('picParamListCtrl', function picParamListCtrl($scope, picsFactory) {
-  $scope.picParams = picsFactory.query();
+.controller ('picParamListCtrl', function ($scope, picsFactory) {
+  picsFactory.get(function(picturedata){
+  $scope.picParamsname = picturedata.name;
+  $scope.picParamscolor = picturedata.color;
+ });
+
 })
 
 
-.controller ('picsDetailCtrl', function picsDetailCtrl($scope, picsFactory) {
-  $scope.picParams = picsFactory.query();
+.controller ('picsDetailCtrl', function ($scope, picsFactory) {
+  picsFactory.get(function(picturedata){
+  $scope.picDetailParamsname = picsFactory.name;
+});
 })
-
-/*
-
-.controller ('CarouselDemoCtrl' function CarouselDemoCtrl($scope, picsFactory) {
-  $scope.myInterval = 5000;
-  var slides = $scope.slides = [];
-  $scope.addSlide = function() {
-    var newWidth = 200 + ((slides.length + (25 * slides.length)) % 150);
-    slides.push({
-      image: 'http://placekitten.com/' + newWidth + '/200',
-      text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-        ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-    });
-  };
-  for (var i=0; i<4; i++) {
-    $scope.addSlide();
-  }
-}
-
-*/
-
 ;
-
 

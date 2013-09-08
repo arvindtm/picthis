@@ -45,6 +45,8 @@ angular.module( 'picThis.pics', [
   picsFactory.get(function(picturedata){
   $scope.picParamsname = picturedata.name;
   $scope.picParamscolor = picturedata.color;
+  $scope.picParamsurl = picturedata.url;
+  $scope.picParamsid = picturedata.id;
  });
 
 })
@@ -53,6 +55,8 @@ angular.module( 'picThis.pics', [
 .controller ('picsDetailCtrl', function ($scope, picsFactory) {
   picsFactory.get(function(picturedata){
   $scope.picDetailParamsname = picsFactory.name;
+  $scope.picParamsid = picturedata.id;
+  $scope.picParamsurl = picturedata.url;
 });
 })
 ;

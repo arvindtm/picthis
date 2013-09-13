@@ -19,7 +19,9 @@ angular.module( 'plusOne','picService' [] )
 
 angular.module('jsonService', ['ngResource'])
 .factory('jsonServiceFactory', function($resource) {
-  return $resource('assets/data.json');
+  return $resource('assets/data.json',{},{
+  'getData':  {method:'GET', isArray:true}
+  }
+  );
 });
 
-// angular.module('picThis', ['picService']);

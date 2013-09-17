@@ -3,18 +3,14 @@ angular.module( 'picThis', [
   'templates-common',
   'picThis.home',
   'picThis.about',
-  'picThis.pics',
   'picThis.misc',
   'ui.state',
   'ui.route'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  
   $urlRouterProvider.otherwise( '/home' );
 })
-
-
 
 .run( function run ( titleService ) {
   titleService.setSuffix( ' | Picthis' );

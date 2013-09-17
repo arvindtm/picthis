@@ -6,24 +6,25 @@
  * For example, a `note` section could have the submodules `note.create`,
  * `note.delete`, `note.edit`, etc.
  *
- * Regardless, so long as dependencies are managed correctly, the build process
- * will automatically take take of the rest.
- *
- * The dependencies block here is also where component dependencies should be
- * specified, as shown below.
  */
 angular.module( 'picThis.home', [
   'ui.state',
   'titleService',
-  'plusOne'
-])
+  'plusOne',
+  'placeholders',
+  'ui.bootstrap',
+  'picService',
+  'jsonService'
+  ])
 
 /**
  * Each section or module of the site can also have its own routes. AngularJS
  * will handle ensuring they are all available at run-time, but splitting it
  * this way makes each module more "self-contained".
  */
-.config(function config( $stateProvider ) {
+
+.config(function myAppConfig ( $stateProvider, $routeProvider ) {
+  
   $stateProvider.state( 'home', {
     url: '/home',
     views: {
@@ -33,13 +34,35 @@ angular.module( 'picThis.home', [
       }
     }
   });
-})
+ 
 
+  $stateProvider.state( 'home/:id', {
+    url: '/home/:id',
+    views: {
+      "main": {
+        controller: 'HomeCtrl',
+        templateUrl: 'home/pics-detail.tpl.html'
+      }
+	} 
+	});
+	
+  $routeProvider.when('/home/:id', {
+		templateUrl: 'home/pics-detail.tpl.html', 
+		controller: 'HomeCtrl'}).
+    otherwise( '/home' );
+	}
+	)
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope, titleService ) {
+.controller('HomeCtrl', function HomeController( $scope, titleService, picsFactory ) {
   titleService.setTitle( 'Home' );
+  picsFactory.get(function(picturedata){
+  $scope.picParamsid = picturedata.id;
+  $scope.picParamsurl = picturedata.url;
+  });
+
+  
 })
 
 ;

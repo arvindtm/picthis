@@ -44,10 +44,10 @@ angular.module( 'picThis.misc', [
   jsonServiceFactory.getData(function(data){
   
   //$scope.id = data[1].id;
-  for (id=0;id<=20;id++)
+  for (i=0;i<=20;i++)
   {
-  $scope.miscParamsname.id = data[id].name;
-  $scope.miscParamsaddress.id = data[id].address;
+  $scope.miscParamsname.id = data[i].name;
+  $scope.miscParamsaddress.id = data[i].address;
   }
  });
 })

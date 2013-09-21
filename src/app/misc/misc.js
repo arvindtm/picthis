@@ -39,23 +39,18 @@ angular.module( 'picThis.misc', [
 	}
 )
 
+
 .controller ('miscParamListCtrl', function($scope, jsonServiceFactory) {
   
   jsonServiceFactory.getData(function(data){
-  
-  //$scope.id = data[1].id;
-  for (i=0;i<=20;i++)
-  {
-  $scope.miscParamsname.id = data[i].name;
-  $scope.miscParamsaddress.id = data[i].address;
-  }
+  $scope.posts = data;   
  });
 })
 
+
 .controller('miscDetailCtrl', function($scope, jsonServiceFactory) {
   jsonServiceFactory.getData(function(data){
-    $scope.name = data.name;
-    $scope.children = data.children;
+    $scope.posts = data;   
   });
 })
 ;

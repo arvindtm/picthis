@@ -32,7 +32,7 @@ angular.module( 'picThis.misc', [
 	when('/misc',{
 		templateUrl: 'misc/misc.tpl.html',   
 		controller: 'miscParamListCtrl'}).
-    when('/misc/:id', {
+    when('/misc/:posts.id', {
 		templateUrl: 'misc/misc-detail.tpl.html', 
 		controller: 'miscDetailCtrl'}).
     otherwise( '/misc' );

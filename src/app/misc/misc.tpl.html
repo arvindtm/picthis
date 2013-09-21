@@ -19,12 +19,15 @@
   
   
   <div ng-repeat="post in posts">
-	<h2>
-	<a href='{{post.url}}'>{{post.title}}</a>
-	</h2>
-	<div class='time'>{{post.time}} - {{post.author}} </div>
-	<p>{{post.description}}</p>
-	<img ng-src="{{post.banner}}" />
+	
+	<p>{{post.title}}</p>
+		<div class="span4">
+		 <a href="#misc/{{post.id}}" class="thumb">
+		 <img src={{post.thumbpicurl}}></a>
+		 <p>{{post.description}}</p>
+		 <div class='time'>{{post.time}} - {{post.author}} </div>
+		</div>
+	
   </div>
 
   

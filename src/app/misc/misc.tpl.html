@@ -1,35 +1,22 @@
 <div class="row-fluid">
-  <h1 class="page-header">
-    Easy Pic for Lazy readers and folks
-    <small>For the lazy and impatient.</small>
-  </h1>
-    
-  <div class=span12>
-        <img ph-img="777x250" class="img-polaroid" />
-  </div>
+  <p class="lead">
+    Every day we should hear at least one little song, read one good poem, see one exquisite picture, and, if possible, speak a few sensible words.
+    <small>Johann Wolfgang von Goethe .</small>
+  </p>
 
-  <div>
-  <li>
-  <li ng-repeat="address in miscParamsaddress">
-    <ul>{{address}}</ul>
-  </li>
-
-   <a href="#/misc/{{id}}" class="thumb">
-  <img ng-src="{{miscParamsname}}"></a>
-  
   
   <div ng-repeat="post in posts">
 	
-	<p>{{post.title}}</p>
-		<div class="span4">
-		 <a href="#misc/{{post.id}}" class="thumb">
-		 <img src={{post.thumbpicurl}}></a>
-		 <p>{{post.description}}</p>
-		 <div class='time'>{{post.time}} - {{post.author}} </div>
-		</div>
-	
+	<div class=span10>
+			<div class="card">
+				<p class="card-title" id='imgwrapper'>{{post.title}}</p>
+				<p id='textwrapper' class='clearfix'>{{post.description}}</p>
+				<img src="{{post.thumbpicurl}}" class='full'/>
+				<p class='time'>{{post.time}} - {{post.author}} </p>
+				<br>
+			</div>
+	</div>
   </div>
-
-  
+	
 </div>
 

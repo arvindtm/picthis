@@ -9,42 +9,24 @@
 </div>
 
 <div class="marketing">
+
+
+
   <div class="row">
     
-	<div class="span4">
-  <h4><i class="icon-thumbs-up"></i> Good to Go!</h4>
-         <a href="#/home/{{picParamsid}}" class="thumb">
-		 <img  ph-img="250x180" class="img-polaroid"></a>
-	</div>
 	
-    <div class="span4">
-      <h4><i class="icon-magic"></i> Complete Build</h4>
-      <img ph-img="250x180" class="img-polaroid" />
-    </div>
-    <div class="span4">
-      <h4><i class="icon-retweet"></i> Modularization</h4>
-      <img ph-img="250x180" class="img-polaroid" />
-    </div>
-
+	  <div ng-repeat="pic in picParams">
+			<div class="minicard">
+		<!--	<p class="card-title" id='imgwrapper'>{{pic.title}}</p>
+			    <p id='textwrapper' class='clearfix'>{{pic.description}}</p>  -->
+				<a href="#/home/{{pic.id}}">
+				<img ng-src="{{pic.thumbpicurl}}" class='full'/> </a>
+		<!--	<p class='time'>{{pic.time}} - {{pic.author}} </p>	-->
+			</div>
+  </div>
+  
     
    </div>
-  <div class="row">
-    <div class="span4">
-  <h4><i class="icon-thumbs-up"></i> Good to Go!</h4>
-         <a href="#/home/{{picParamsid}}" class="thumb">
-		 <img  ph-img="250x180" class="img-polaroid"></a>
-	</div>
-	
-    <div class="span4">
-      <h4><i class="icon-magic"></i> Complete Build</h4>
-      <img ph-img="250x180" class="img-polaroid" />
-    </div>
-    <div class="span4">
-      <h4><i class="icon-retweet"></i> Modularization</h4>
-      <img ph-img="250x180" class="img-polaroid" />
-    </div>
-    
-    
-  </div>
+  
 </div>
 

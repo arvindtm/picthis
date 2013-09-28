@@ -119,18 +119,18 @@ h2 {
       a {
         font-weight: bold;
         text-align: center;
-        //border-left: 1px solid rgba(255, 255, 255, 0.75);
+        border-left: 1px solid rgba(255, 255, 255, 0.75);
         border-right: 0px solid rgba(0, 0, 0, 0.1);
       }
       
       &:first-child a {
         border-left: 0;
-        border-radius: 3px 0 0 3px;
+        border-radius: 0px 0 0 0px;
       }
       
       &:last-child a {
         border-right: 0;
-        border-radius: 3px 0 0 3px;
+        border-radius: 0px 0 0 0px;
       }
     }
   }
@@ -276,6 +276,92 @@ div.card {
 	margin: 0 0 15px 1px;
  
 	}
+/************************************/
+/* mini card */
+
+ul.minigNow {
+	width: 100px;
+	height: 100%;
+	float: left;
+	padding: 0;
+}
+ul.minigNow li {
+	width: 110px;
+	float: left;
+	list-style: none;
+	padding: 10px;
+}
+
+div.minicard {
+	background: #fff;
+	width: 250px;
+	position: relative;
+	padding: 15px;
+	box-shadow: 0px 3px rgba( 0, 0, 0, 0.1 );
+	font-family: Open Sans;
+	color: #444;
+	font-size: 14px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	}
+	div.card p {
+		margin: 0 0 15px 0;
+ 
+	}
+	div.minicard p.card-title {
+		font-size: 28px;
+		text-align: left;
+	}
+	/*div.minicard p.url {
+		border-top: 1px solid #e5e5e5;
+		background-image: url('http://www.eriklindemann.com/wp-content/uploads/2013/05/url.png');
+		background-repeat: no-repeat;
+		padding: 6px 0 0 30px;
+		height: 30px;
+		display: block;
+		margin-bottom: -10px;
+	}
+	div.minicard p.url a {
+		color: #04bff4;
+		text-decoration: none;
+		top: 4px;
+		width: 385px;
+		display: block;
+		position: relative;
+	}*/
+ 
+	#wrapper{
+ 
+		width: 100%
+		margin:auto;
+	}
+ 
+	#imgwrapper
+	{
+		width: 40%;
+		float: right;
+	}
+	#textwrapper
+	{
+		
+		width: 40%;
+		float: right;
+	}
+ 
+	.clearfix
+	{
+		clear: both;
+	}
+ 
+ 
+	div.minicard img.full{
+ 
+	width: 160px;
+	margin: 0 0 15px 1px;
+ 
+	}
+ 
  
 @import '../app/home/home.less';
 

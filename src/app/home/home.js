@@ -57,13 +57,12 @@ angular.module( 'picThis.home', [
  */
 .controller('HomeCtrl', function HomeController( $scope, titleService, picsFactory ) {
   titleService.setTitle( 'Home' );
-  picsFactory.get(function(picturedata){
-  $scope.picParamsid = picturedata.id;
-  $scope.picParamsurl = picturedata.url;
+  picsFactory.getData(function(picturedata){
+  $scope.picParams = picturedata;
+  
   });
 
   
 })
-
 ;
 

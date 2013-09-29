@@ -10,23 +10,28 @@
 
 <div class="marketing">
 
+</div>
 
 
-  <div class="row">
     
-	
+
 	  <div ng-repeat="pic in picParams">
+	   <ul>
+	    
 			<div class="minicard">
 		<!--	<p class="card-title" id='imgwrapper'>{{pic.title}}</p>
 			    <p id='textwrapper' class='clearfix'>{{pic.description}}</p>  -->
 				<a href="#/home/{{pic.id}}">
-				<img ng-src="{{pic.thumbpicurl}}" class='full'/> </a>
+				<img ng-src="{{pic.thumbpicurl}}" class='thumbnail'/> </a>
 		<!--	<p class='time'>{{pic.time}} - {{pic.author}} </p>	-->
 			</div>
-  </div>
+			
+		
+		</ul>
+	</div>
   
     
-   </div>
+
   
-</div>
+
 

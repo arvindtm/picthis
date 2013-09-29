@@ -58,6 +58,7 @@ angular.module( 'picThis.home', [
 .controller('HomeCtrl', function HomeController( $scope, titleService, picsFactory ) {
   titleService.setTitle( 'Home' );
   picsFactory.getData(function(picturedata){
+  
   $scope.picParams = picturedata;
   
   });

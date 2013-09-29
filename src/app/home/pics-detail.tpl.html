@@ -12,13 +12,18 @@
 		<p id='textwrapper' class='clearfix'>There are a few exceptions to this which will be covered.</p>
 		<img src="http://www.eriklindemann.com/eMetro/images/full/helpless.jpg" class='full'/>
 	</div>
+	
 </li>
 
+<li>
+
 			<div class="card">
-				<p class="card-title" id='imgwrapper'>{{picParams.title}}</p>
-			    <p id='textwrapper' class='clearfix'>{{picParams.description}}</p> 
-				<img ng-src="{{picParams.bigpicurl}}" class='full'/>
-				<p class='time'>{{picParams.time}} - {{picParams.author}} </p>	
+				<p class="card-title" id='imgwrapper'>{{picParams[0].title}}</p>
+			    <p id='textwrapper' class='clearfix'>{{picParams[0].description}}</p> 
+				<img ng-src="{{picParams[0].bigpicurl}}" class='full'/>
+				<p class='time'>{{picParams[0].time}} - {{picParams[0].author}} </p>	
 			</div>  
-</div>
+
+</li>
+	</div>
 

@@ -5,7 +5,7 @@
   </h1>
     
 
-<li>
+
 	<div class="card">
 		<p class="card-title" id='imgwrapper'>Picture</p>
 		<p id='textwrapper' class='clearfix'>When a card has a picture, it should almost always be full bleed width-wise.</p>
@@ -13,17 +13,15 @@
 		<img src="http://www.eriklindemann.com/eMetro/images/full/helpless.jpg" class='full'/>
 	</div>
 	
-</li>
 
-<li>
+ <p></p>
 
-			<div class="card">
-				<p class="card-title" id='imgwrapper'>{{picParams[0].title}}</p>
-			    <p id='textwrapper' class='clearfix'>{{picParams[0].description}}</p> 
-				<img ng-src="{{picParams[0].bigpicurl}}" class='full'/>
-				<p class='time'>{{picParams[0].time}} - {{picParams[0].author}} </p>	
-			</div>  
+	<div class="card">
+		<p class="card-title" id='imgwrapper'>{{picture.title}}</p>
+		<p id='textwrapper' class='clearfix'>{{picture.description}}</p> 
+		<img src="{{picture.bigpicurl}}" class='full'/>
+		<p class='time'>{{picture.time}} - {{picture.author}} </p>	
+	</div>  
 
-</li>
-	</div>
+
 

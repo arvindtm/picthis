@@ -41,7 +41,7 @@ angular.module( 'picThis.home', [
     views: {
       "main": {
         controller: 'picCtrl',
-        templateUrl: 'home/pics-detail.tpl.html'
+        templateUrl: 'view/pics-detail.tpl.html'
       }
 	} 
 	});

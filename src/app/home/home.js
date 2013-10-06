@@ -23,7 +23,7 @@ angular.module( 'picThis.home', [
  * this way makes each module more "self-contained".
  */
 
-.config(function myAppConfig ( $stateProvider, $routeProvider) {
+.config(function myAppConfig ( $stateProvider) {
   
   $stateProvider.state( 'home', {
     url: '/home',
@@ -46,25 +46,26 @@ angular.module( 'picThis.home', [
 	} 
 	});
 
-  $routeProvider.
-	when('/home', { templateUrl: 'home/home.tpl.html', controller: 'HomeCtrl'}).
-	when('/home/:id', { templateUrl: 'home/pics-detail.tpl.html', controller: 'picCtrl'}).
-    otherwise( {redirectTo:'/home' });
 	}
 	)
 /**
  * And of course we define a controller for our route.
  */
-.controller('HomeCtrl', function HomeController( $scope, $routeParams, titleService, picsFactory ) {
+.controller('HomeCtrl', function HomeController( $scope,titleService, picsFactory ) {
   titleService.setTitle( 'Home' );
   picsFactory.getData(function(picturedata){
   $scope.picParams = picturedata;
+  
   });
 })
 
-.controller('picCtrl', function picController( $scope, $routeParams, titleService ) {
+
+.controller('picCtrl', function picController( $scope, $stateParams, titleService,picsFactory ) {
   titleService.setTitle( 'Pics' );
-  $scope.picture.id = $scope.picParams[picParams$routeParams.id]; 
+   picsFactory.getData(function(picturedata){
+  $scope.picture = picturedata[$stateParams.id];
+   });
+  
 })
 ;
 
